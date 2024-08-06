@@ -1,0 +1,40 @@
+.cv-page {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    padding: 4rem 0;
+
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 50px;
+                height: 3px;
+                background-color: #007bff;
+                margin: 10px auto;
+            }
+        }
+
+        .cv-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+    }
+}

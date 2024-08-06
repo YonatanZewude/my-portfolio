@@ -1,0 +1,148 @@
+.projects {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem;
+
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 15px;
+
+            li {
+                background: #f9f9f9;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                padding: 1rem;
+                margin-bottom: 2rem;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                width: 28%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+
+                h3 {
+                    margin-top: 0;
+                }
+
+                p {
+                    font-size: 1rem;
+                    line-height: 1.5;
+                    flex-grow: 1;
+                    margin-bottom: 0;
+                }
+
+                a {
+                    color: #007bff;
+                    text-decoration: none;
+                    font-size: 2rem; // Adjust icon size
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 1rem;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+
+                    i {
+                        font-size: 2rem; // Adjust icon size
+                        color: #333;
+                    }
+                }
+
+                .slider-container {
+                    margin-top: 1rem;
+                    position: relative;
+
+                    .slick-prev,
+                    .slick-next {
+                        color: #ff0707; // Customize arrow color
+                        z-index: 1;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        font-size: 0; // Hide the text
+                        width: 30px;
+                        height: 30px;
+                        background-color: rgba(0, 0, 0, 0.5); // Make the arrow buttons visible
+                        border-radius: 50%;
+
+                        &:before {
+                            font-size: 20px; // Adjust arrow size
+                            color: #fff; // Customize arrow color
+                        }
+                    }
+
+                    .slick-prev {
+                        left: 10px; // Position left arrow
+                    }
+
+                    .slick-next {
+                        right: 10px; // Position right arrow
+                    }
+
+                    .slick-dots {
+                        display: flex !important; // Ensure dots are in the same row
+                        justify-content: center; // Center the dots
+                        align-items: center; // Align the dots vertically in the center
+                        bottom: -25px; // Adjust position of dots
+                        visibility: visible;
+
+                        li {
+                            visibility: hidden;
+
+                            button {
+                                width: 10px;
+                                height: 10px; // Ensure the buttons are circular
+                                margin: 0 5px; // 10px space between buttons
+
+
+                                &:before {
+                                    font-size: 10px; // Adjust dot size
+                                    color: #007bff; // Adjust dot color
+                                }
+                            }
+
+                            &.slick-active button:before {
+                                color: #0056b3; // Adjust active dot color
+                            }
+                        }
+                    }
+
+                    img {
+                        width: 100%;
+                        border-radius: 8px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            ul {
+                li {
+                    width: calc(50%); // Two items per row on smaller screens
+                }
+            }
+        }
+    }
+
+    @media (max-width: 576px) {
+        .container {
+            ul {
+                li {
+                    width: 90%; // One item per row on very small screens
+                }
+            }
+        }
+    }
+}
