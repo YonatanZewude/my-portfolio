@@ -43,7 +43,7 @@
                 a {
                     color: #007bff;
                     text-decoration: none;
-                    font-size: 2rem; // Adjust icon size
+                    font-size: 2rem;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -54,7 +54,7 @@
                     }
 
                     i {
-                        font-size: 2rem; // Adjust icon size
+                        font-size: 2rem;
                         color: #333;
                     }
                 }
@@ -65,35 +65,35 @@
 
                     .slick-prev,
                     .slick-next {
-                        color: #ff0707; // Customize arrow color
+                        color: #ff0707;
                         z-index: 1;
                         top: 50%;
                         transform: translateY(-50%);
-                        font-size: 0; // Hide the text
+                        font-size: 0;
                         width: 30px;
                         height: 30px;
-                        background-color: rgba(0, 0, 0, 0.5); // Make the arrow buttons visible
+                        background-color: rgba(0, 0, 0, 0.5);
                         border-radius: 50%;
 
                         &:before {
-                            font-size: 20px; // Adjust arrow size
-                            color: #fff; // Customize arrow color
+                            font-size: 20px;
+                            color: #fff;
                         }
                     }
 
                     .slick-prev {
-                        left: 10px; // Position left arrow
+                        left: 10px;
                     }
 
                     .slick-next {
-                        right: 10px; // Position right arrow
+                        right: 10px;
                     }
 
                     .slick-dots {
-                        display: flex !important; // Ensure dots are in the same row
-                        justify-content: center; // Center the dots
-                        align-items: center; // Align the dots vertically in the center
-                        bottom: -25px; // Adjust position of dots
+                        display: flex !important;
+                        justify-content: center;
+                        align-items: center;
+                        bottom: -25px;
                         visibility: visible;
 
                         li {
@@ -101,18 +101,18 @@
 
                             button {
                                 width: 10px;
-                                height: 10px; // Ensure the buttons are circular
-                                margin: 0 5px; // 10px space between buttons
+                                height: 10px;
+                                margin: 0 5px;
 
 
                                 &:before {
-                                    font-size: 10px; // Adjust dot size
-                                    color: #007bff; // Adjust dot color
+                                    font-size: 10px;
+                                    color: #007bff;
                                 }
                             }
 
                             &.slick-active button:before {
-                                color: #0056b3; // Adjust active dot color
+                                color: #0056b3;
                             }
                         }
                     }
@@ -130,7 +130,7 @@
         .container {
             ul {
                 li {
-                    width: calc(50%); // Two items per row on smaller screens
+                    width: calc(50%);
                 }
             }
         }

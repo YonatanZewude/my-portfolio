@@ -1,8 +1,13 @@
 import React from 'react';
 import '../styles/main.scss';
-import Map from './map'; // Import the Map component
+import Map from './map';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="footer">
       <div className="container">
@@ -14,10 +19,10 @@ const Footer: React.FC = () => {
           <div className="footer-section links">
             <h3>Quick Links</h3>
             <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/about-experience-skills">About</a></li>
-              <li><a href="/projects">Projects</a></li>
-              <li><a href="/contact">My CV</a></li>
+              <li><Link to="/" onClick={scrollToTop}>Home</Link></li>
+              <li><Link to="/about-experience-skills" onClick={scrollToTop}>About</Link></li>
+              <li><Link to="/projects" onClick={scrollToTop}>Projects</Link></li>
+              <li><Link to="/contact" onClick={scrollToTop}>My CV</Link></li>
             </ul>
           </div>
           <div className="footer-section contact">

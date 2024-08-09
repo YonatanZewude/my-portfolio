@@ -15,7 +15,7 @@ const center = {
 };
 
 const Map: React.FC = () => {
-  const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+  const googleMapsApiKey = process.env.GOOGLE_MAPS_API_KEY;
   const mapRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
