@@ -1,13 +1,9 @@
 import React from 'react';
 import '../styles/main.scss';
 import profileImage from '../assets/images/profile1.jpg';
-import { logEvent } from '../analytics';
+
 
 const Home: React.FC = () => {
-  const handleSocialLinkClick = (platform: string) => {
-    logEvent('Social Link', `Clicked on ${platform}`);
-  };
-
   return (
     <div className="home">
       <div className="container">
@@ -24,7 +20,7 @@ const Home: React.FC = () => {
               href="https://github.com/YonatanZewude"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => handleSocialLinkClick('GitHub')}
+              
             >
               GitHub
             </a>
@@ -32,7 +28,7 @@ const Home: React.FC = () => {
               href="https://www.linkedin.com/in/yonatan-zewude-52a993264/"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => handleSocialLinkClick('LinkedIn')}
+            
             >
               LinkedIn
             </a>

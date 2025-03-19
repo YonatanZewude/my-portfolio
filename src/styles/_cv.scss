@@ -36,5 +36,86 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
+
+        
     }
+}
+
+
+#cv-content {
+    width: 800px; // 🔹 Säkerställer att PDF bredden blir korrekt
+    background: white;
+    padding: 20px;
+  }
+  
+  #cv-content img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* 🛠 Se till att hela CV:t kommer med i PDF */
+  @media print {
+    body * {
+      visibility: hidden;
+    }
+    #cv-content, #cv-content * {
+      visibility: visible;
+    }
+    #cv-content {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+
+#printButton {
+  background-color: #c55bd1; 
+  color: white;               
+  font-size: 16px;           
+  font-weight: bold;          
+  padding: 12px 20px;         
+  border: none;               
+  border-radius: 5px;         
+  cursor: pointer;            
+  transition: background 0.3s ease-in-out; 
+  width: 200px;     
+  align-items: center;  
+  margin-bottom: 10px;
+}
+
+
+#download-pdf {
+  margin-top: 10px;
+  background-color: #007bff; 
+  color: white;               
+  font-size: 16px;           
+  font-weight: bold;          
+  padding: 12px 20px;         
+  border: none;               
+  border-radius: 5px;         
+  cursor: pointer;            
+  transition: background 0.3s ease-in-out; 
+  width: 200px;     
+  align-items: center;         
+}
+
+
+#download-pdf:hover {
+  background-color: #0056b3;  
+}
+
+
+#download-pdf:active {
+  background-color: #004099;
+}
+
+
+@media (max-width: 600px) {
+  #download-pdf {
+    width: 100%;  
+    text-align: center;
+  }
 }

@@ -4,7 +4,7 @@ import '../styles/main.scss';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import { logEvent } from '../analytics';
+
 
 const projects = [
   {
@@ -103,10 +103,6 @@ const Projects: React.FC = () => {
     slidesToScroll: 1
   };
 
-  const handleProjectLinkClick = (projectName: string) => {
-    logEvent('Project Link', `Clicked on ${projectName}`);
-  };
-
   return (
     <div className="projects">
       <div className="container">
@@ -129,7 +125,7 @@ const Projects: React.FC = () => {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => handleProjectLinkClick(project.name)}
+             
               >
                 <i className="bi bi-github"></i>
                 <p className='GitHub'>GitHub</p>

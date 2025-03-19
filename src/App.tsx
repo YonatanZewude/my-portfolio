@@ -6,17 +6,17 @@ import AboutExperienceSkills from './pages/AboutMe';
 import Projects from './pages/Projects';
 import Contact from './pages/Cv';
 import './styles/_base.scss';
-import { initializeAnalytics, logPageView } from './analytics';
+
 
 const App: React.FC = () => {
   const location = useLocation();
 
   useEffect(() => {
-    initializeAnalytics();
+ 
   }, []);
 
   useEffect(() => {
-    logPageView();
+  
   }, [location]);
 
   return (
