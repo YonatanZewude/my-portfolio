@@ -16,27 +16,43 @@ const CV: React.FC = () => {
   const saveAsPDF = () => {
     const element = document.getElementById("cv-content");
     if (!element) return;
-
+  
     // Använd html2canvas och jsPDF från window
     (window as any).html2canvas(element, {
-      scale: 2, // För bättre upplösning
-      useCORS: true // Om externa bilder används
+      scale: 1, // Högre upplösning för bättre kvalitet
+      useCORS: true, // Stöd för externa bilder
+      backgroundColor: "#FFFFFF", // Säkerställer vit bakgrund
+      scrollX: 1, // Förhindrar skrollning
+      scrollY: 0,
+      windowWidth: element.scrollWidth, // Matchar storleken exakt
+      windowHeight: element.scrollHeight
     }).then((canvas: HTMLCanvasElement) => {
       const imgData = canvas.toDataURL("image/png");
+  
+      // Definiera A4 storlek exakt
       const pdf = new (window as any).jspdf.jsPDF({
         orientation: "portrait",
         unit: "mm",
         format: "a4"
       });
-
+  
       const imgWidth = 210; // A4 bredd i mm
+      const pageHeight = 297; // A4 höjd i mm
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
-      pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
+  
+      let y = 0;
+      while (y < imgHeight) {
+        pdf.addImage(imgData, "PNG", 0, y * -1, imgWidth, imgHeight);
+        y += pageHeight;
+        if (y < imgHeight) {
+          pdf.addPage();
+        }
+      }
+  
       pdf.save("Yonatan_Zewude_CV.pdf");
     });
   };
-
+  
   return (
     <div className="cv-page">
       <div className="container">
@@ -48,10 +64,10 @@ const CV: React.FC = () => {
         </div>
 
         {/* 🔘 Knapp för att skriva ut PDF */}
-        <button id="printButton" onClick={openPrintDialog}>Skriv ut</button>
+        <button id="printButton" onClick={openPrintDialog}>Print </button>
 
         {/* 📥 Knapp för att ladda ner PDF */}
-        <button id="download-pdf" onClick={saveAsPDF}>Ladda ner som PDF</button>
+        <button id="download-pdf" onClick={saveAsPDF}>Download as PDF</button>
       </div>
     </div>
   );
